@@ -1,7 +1,8 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout/Layout';
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
+import { fetch } from '../api/testQuery';
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ChatPage = lazy(() => import("./pages/ChatPage"));
@@ -9,6 +10,16 @@ const RegisterPage = lazy(() => import("./pages/RegisterPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 function App() {
+  useEffect(() => {
+    async function getTest() {
+      const data = await fetch();
+      console.log(data);
+      return data;
+    }
+    getTest();
+  }, []);
+
+  
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
