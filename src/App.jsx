@@ -2,7 +2,7 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout/Layout';
 import { lazy, useEffect } from 'react';
-import { fetch } from '../api/testQuery';
+import { fetch } from './api/testQuery';
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ChatPage = lazy(() => import("./pages/ChatPage"));

@@ -5,8 +5,7 @@ const Layout = () => {
     return (
         <>
             <nav>
-                <a href="/">nexo</a>
-                {/* <NavLink to="/">nexo</NavLink> */}
+                <NavLink to="/">nexo</NavLink>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/chat">Chat</NavLink>
                 <NavLink to="/register">Register</NavLink>
