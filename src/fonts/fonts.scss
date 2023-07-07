@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'Manrope';
+    src: local('Manrope'), url(./Manrope-Bold.woff) format('woff'),
+    url(./Manrope-Bold.woff2), format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: local('Manrope'), url(./Manrope-SemiBold.woff) format('woff'),
+    url(./Manrope-SemiBold.woff2), format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: local('Manrope'), url(./Manrope-Regular.woff) format('woff'),
+    url(./Manrope-Regular.woff2), format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: local('Manrope'), url(./Poppins-Bold.woff) format('woff'),
+    url(./Poppins-Bold.woff2), format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
