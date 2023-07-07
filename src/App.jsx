@@ -1,35 +1,44 @@
-import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout/Layout';
-import { lazy, useEffect } from 'react';
-import { fetch } from './api/testQuery';
+import { lazy } from 'react';
+import { GlobalStyle, DarkTheme, LightTheme } from "./styles"
+import { Global, ThemeProvider } from '@emotion/react'
+
+
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ChatPage = lazy(() => import("./pages/ChatPage"));
 const RegisterPage = lazy(() => import("./pages/RegisterPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
-function App() {
-  useEffect(() => {
-    async function getTest() {
-      const data = await fetch();
-      console.log(data);
-      return data;
-    }
-    getTest();
-  }, []);
 
-  
+
+const App = () => {
+  const theme = "light";
+
   return (
-    <Routes>
-      <Route path='/' element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route path='/chat' element={<ChatPage />} />
-        <Route path='/register' element={<RegisterPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Route>
-    </Routes>
+    <ThemeProvider
+      theme={
+        theme === "light"
+          ? LightTheme
+          : DarkTheme
+      }
+    >
+      
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path='/chat' element={<ChatPage />} />
+          <Route path='/register' element={<RegisterPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+
+      <Global styles={GlobalStyle} />
+
+    </ThemeProvider>
   )
 }
+
 
 export default App;

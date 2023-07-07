@@ -1,6 +1,13 @@
+import { Container } from "../styles";
+
+
+
 const HomePage = () => {
     return ( 
-        <div>HomePage</div>
+        <Container>
+            <div>HomePage</div>
+        </Container>
+        
     );
 }
 
